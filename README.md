@@ -28,7 +28,11 @@ Notas:
 - La resta, siempre dara un numero positivo
 
 Opción 1: Problemas de suma -> Va a escoger 2 números al azar entre 0-100. Pregunta ¿Cuánto es x+y? Tiene 3 intentos, si no acertó, le muestra la respuesta correcta
+
 Opción 2: Problemas de resta -> Escoge al azar dos números entre 0 y 100. Si el primer número es mayor que el  segundo, está bien. Si el primero es menor que el segundo, se intercambian para que el resultado sea positivo.
+
 Opción 3: Problemas de multiplicación -> Primer factor 0-100 - Segundo factor de 0-10
+
 Opción 4: Problemas de división -> Para que el resultado dé siempre entero, se eligen dos números entre 1 y 10 a y b. Se hace el producto a*b y se le llama DIVIDENDO,  y al número b se le llama DIVISOR. La pregunta será “Cuánto es DIVIDENDO / DIVISOR?”
+
 Opción 9: Salir
