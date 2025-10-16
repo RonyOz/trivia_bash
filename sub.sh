@@ -5,20 +5,36 @@ source "$BASE_DIR/lib.sh"
 # Resta: dos términos entre 0 y 100
 a=$(rand_int 0 100)
 b=$(rand_int 0 100)
+
+# Si el primero es menor que el segundo, se intercambian para resultado positivo
+if [ $a -lt $b ]; then
+    temp=$a
+    a=$b
+    b=$temp
+fi
+
 correct=$((a - b))
 
 echo "Resuelve: $a - $b = ?"
-ans=$(ask_answer "Tu respuesta: ")
 
-if ! check_numeric "$ans"; then
-    echo "Entrada inválida. Se esperaba un número entero."
-    exit 1
-fi
+# 3 intentos
+for intento in {1..3}; do
+    ans=$(ask_answer "Intento $intento/3 - Tu respuesta: ")
+    
+    if ! check_numeric "$ans"; then
+        echo "Entrada inválida. Se esperaba un número entero."
+        continue
+    fi
+    
+    if [ "$ans" -eq "$correct" ]; then
+        echo "¡Correcto!"
+        exit 0
+    else
+        if [ $intento -lt 3 ]; then
+            echo "Incorrecto. Intenta de nuevo."
+        fi
+    fi
+done
 
-if [ "$ans" -eq "$correct" ]; then
-    echo "¡Correcto!"
-    exit 0
-else
-    echo "Incorrecto. La respuesta correcta era: $correct"
-    exit 1
-fi
+echo "Incorrecto. La respuesta correcta era: $correct"
+exit 1

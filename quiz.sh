@@ -7,7 +7,7 @@ TOTAL=0
 
 print_header() {
 	echo "=============================="
-	echo "  Quiz Matemático - Bash"
+	echo "     QUIZ MATEMÁTICO"
 	echo "=============================="
 }
 
@@ -16,10 +16,10 @@ while true; do
 	print_header
 	echo "Puntaje: ${SCORE}/${TOTAL}"
 	echo
-	echo "1) Suma"
-	echo "2) Resta"
-	echo "3) Multiplicación"
-	echo "4) División (resultado entero)"
+	echo "1) Problemas de suma"
+	echo "2) Problemas de resta"
+	echo "3) Problemas de multiplicación"
+	echo "4) Problemas de división"
 	echo "5) Salir"
 	echo
 	read -rp "Elige una opción [1-5]: " opt
